@@ -1,5 +1,5 @@
 {
-    "name": "slim/twig-view",
+    "name": "woomai/slim-twig-view",
     "type": "library",
     "description": "Slim Framework 3 view helper built on top of the Twig 2 templating component",
     "keywords": ["slim","framework","view","template","twig"],

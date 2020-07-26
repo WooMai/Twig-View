@@ -52,10 +52,13 @@ class Twig implements \ArrayAccess
      * @param string|array $path     Path(s) to templates directory
      * @param array        $settings Twig environment settings
      */
-    public function __construct($path, $settings = [])
+    public function __construct($path, $settings = [], array $global_vars = [])
     {
         $this->loader = $this->createLoader(is_string($path) ? [$path] : $path);
         $this->environment = new \Twig\Environment($this->loader, $settings);
+        foreach ($global_vars as $k => $v) {
+            $this->environment->addGlobal($k, $v);
+        }
     }
 
     /********************************************************************************
